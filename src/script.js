@@ -1705,6 +1705,12 @@ class ModernVideoControls {
             downloadBtn.disabled = playing || !this.viewer.currentEvent;
         }
         
+        // Enable/disable metadata button
+        const metadataBtn = this.viewer.dom.metadataSwitchBtn;
+        if (metadataBtn) {
+            metadataBtn.disabled = !this.viewer.currentEvent;
+        }
+        
         // Enable/disable clip button
         if (this.clipBtn) {
             this.clipBtn.disabled = !this.viewer.currentEvent;
@@ -4239,6 +4245,7 @@ class TeslaCamViewer {
             closeModalBtn: document.getElementById('closeModalBtn'),
             revealFileBtn: document.getElementById('revealFileBtn'),
             downloadFileBtn: document.getElementById('downloadFileBtn'),
+            metadataSwitchBtn: document.getElementById('metaSwitchBtn'),
             headerLocationDisplay: document.getElementById('headerLocationDisplay'),
             // Clip modal elements
             clipModal: document.getElementById('clipModal'),
