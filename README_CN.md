@@ -169,7 +169,7 @@ npx http-server -p 8188 src
 
 1.  **拉取并运行预构建的镜像:**
     ```bash
-    docker run -d -p 8188:80 --name teslacamplayer dupengcheng66666/teslacamplayer:latest
+    docker run -d -p 8188:80 --name tdashcam-studio dupengcheng66666/tdashcam-studio:latest
     ```
 
 2.  **或者构建自己的镜像:**

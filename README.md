@@ -169,7 +169,7 @@ The easiest way is to use Docker Compose with the pre-built image:
 
 1.  **Pull and run the pre-built image:**
     ```bash
-    docker run -d -p 8188:80 --name teslacamplayer dupengcheng66666/teslacamplayer:latest
+    docker run -d -p 8188:80 --name tdashcam-studio dupengcheng66666/tdashcam-studio:latest
     ```
 
 2.  **Or build your own image:**

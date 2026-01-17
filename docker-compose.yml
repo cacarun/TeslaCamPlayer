@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  teslacamplayer:
-    image: dupengcheng66666/teslacamplayer:latest
-    container_name: teslacamplayer
+  tdashcam-studio:
+    image: dupengcheng66666/tdashcam-studio:latest
+    container_name: tdashcam-studio
     ports:
       - "8188:80"
     restart: unless-stopped
@@ -12,8 +12,8 @@ services:
       - UMAMI_SCRIPT_URL=
       - UMAMI_WEBSITE_ID=
     networks:
-      - teslacam-network
+      - tdashcam-network
 
 networks:
-  teslacam-network:
+  tdashcam-network:
     driver: bridge
