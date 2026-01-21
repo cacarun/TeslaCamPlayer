@@ -65,6 +65,7 @@
         selectAtLeastOneCamera: "Please select at least one camera",
         exportFailed: "Export failed: ",
         metadata: "Drive Data",
+        driveStats: "Drive Stats",
         loadingMetadata: "Loading...",
         noMetadata: "No metadata found",
         speed: "Speed",
@@ -176,6 +177,7 @@
         selectAtLeastOneCamera: "请至少选择一个摄像头",
         exportFailed: "导出失败: ",
         metadata: "行车数据",
+        driveStats: "行车数据",
         loadingMetadata: "加载中...",
         noMetadata: "无元数据",
         speed: "速度",
@@ -1893,7 +1895,7 @@ class MetadataManager {
         // Update title based on language
         const lang = this.viewer.currentLanguage;
         if (this.dom.statsTitle) {
-            this.dom.statsTitle.textContent = lang === 'zh' ? '行车数据' : 'Drive Stats';
+            this.dom.statsTitle.textContent = i18n[lang].driveStats;
         }
         
         // Update with latest data
@@ -8856,7 +8858,7 @@ class TeslaCamViewer {
 
         // Update Metadata Panel and Buttons
         const metadataKeys = [
-            'metadata', 'loadingMetadata', 'noMetadata', 'speed', 'gear', 'steering', 
+            'metadata', 'metadataDetail', 'loadingMetadata', 'noMetadata', 'speed', 'gear', 'steering', 
             'accelerator', 'brake', 'blinker', 'autopilot', 'gps', 'heading', 'acceleration',
             'revealFile', 'downloadFile', 'toggleTheme', 'toggleLanguage', 'exportMetadata'
         ];
@@ -8866,6 +8868,11 @@ class TeslaCamViewer {
             });
         });
 
+        // Update stats overlay title if open
+        const statsTitle = document.getElementById('statsTitle');
+        if (statsTitle) {
+            statsTitle.textContent = translations.driveStats;
+        }
 
         if (this.allFiles.length === 0) {
             this.showInitialHelpMessage();
